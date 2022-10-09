@@ -65,6 +65,5 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     "env" = "${var.env}"
     "module": "oracle-terraform-modules/vcn/oci"
     "terraformed": "Please do not edit manually"
-  }
-
+    }
 }
