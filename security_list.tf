@@ -9,7 +9,7 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     }
 
     ingress_security_rules  {
-      source = format("%s/%s", var.my_ip, "32")
+      source = "0.0.0.0/0"
       protocol = 6
       tcp_options {
         max = 22
@@ -18,16 +18,7 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     }
 
     ingress_security_rules  {
-      source = format("%s/%s", var.my_ip, "32")
-      protocol = 6
-      tcp_options {
-        max = 3389
-        min = 3389
-      }
-    }
-
-    ingress_security_rules  {
-      source = format("%s/%s", var.my_ip, "32")
+      source = "0.0.0.0/0"
       protocol = 6
       tcp_options {
         max = 3389
