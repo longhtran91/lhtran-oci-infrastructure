@@ -5,7 +5,16 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     egress_security_rules {
       destination = "0.0.0.0/0"
       protocol = "all"
+    }
 
+    ingress_security_rules  {
+      source = "172.16.1.0/24"
+      protocol = "all"
+    }
+
+    ingress_security_rules  {
+      source = "172.16.255.0/24"
+      protocol = "all"
     }
 
     ingress_security_rules  {
