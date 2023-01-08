@@ -9,6 +9,11 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     }
 
     ingress_security_rules  {
+      source = format("%s%s",var.my_ip,"/32")
+      protocol = "all"
+    }
+
+    ingress_security_rules  {
       source = "0.0.0.0/0"
       protocol = 6
       tcp_options {
