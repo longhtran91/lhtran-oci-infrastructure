@@ -38,6 +38,10 @@ variable "vcn_cidrs" {
   type        = list(string)
   description = "VCN Cidrs"
 }
+variable "home_vpn_cidrs" {
+  type        = list(string)
+  description = "VCN Cidrs"
+}
 variable "env" {
   type        = string
   description = "Environment"

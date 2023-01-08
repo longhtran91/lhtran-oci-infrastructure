@@ -7,14 +7,12 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
       protocol = "all"
     }
 
-    ingress_security_rules  {
-      source = "172.16.1.0/24"
-      protocol = "all"
-    }
-
-    ingress_security_rules  {
-      source = "172.16.255.0/24"
-      protocol = "all"
+    dynamic "ingress_security_rules"  {
+      for_each = var.home_vpn_cidrs
+      content {
+        source = ingress_security_rules.value
+        protocol = "all"
+      }
     }
 
     ingress_security_rules  {
