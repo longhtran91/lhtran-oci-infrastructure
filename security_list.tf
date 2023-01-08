@@ -9,34 +9,11 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
     }
 
     ingress_security_rules  {
-      source = format("%s%s",var.my_ip,"/32")
-      protocol = "all"
-    }
-
-    ingress_security_rules  {
       source = "0.0.0.0/0"
       protocol = "17"
       udp_options {
-        max = 51820
-        min = 51820
-      }
-    }
-
-    ingress_security_rules  {
-      source = "0.0.0.0/0"
-      protocol = 6
-      tcp_options {
-        max = 22
-        min = 22
-      }
-    }
-
-    ingress_security_rules  {
-      source = "0.0.0.0/0"
-      protocol = 6
-      tcp_options {
-        max = 3389
-        min = 3389
+        max = 51821
+        min = 51821
       }
     }
 
@@ -55,15 +32,6 @@ resource "oci_core_security_list" "lhtran_vcn_sl" {
       tcp_options {
         max = 443
         min = 443
-      }
-    }
-
-    ingress_security_rules  {
-      source = "0.0.0.0/0"
-      protocol = 1
-      icmp_options {
-        type = 3
-        code = 4
       }
     }
 
