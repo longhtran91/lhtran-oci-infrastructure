@@ -14,11 +14,11 @@ variable "private_key" {
   type = string
   description = "Private key to sign API call. Public key must be uploaded in the console."
 }
-variable "region" {
+variable "oci_region" {
   type        = string
   description = "Region to deploy VNC"
   validation {
-    condition     = contains(["us-ashburn-1"], var.region)
+    condition     = contains(["us-ashburn-1"], var.oci_region)
     error_message = "Region must be in us-ashburn-1"
   }
 }
