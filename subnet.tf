@@ -19,9 +19,9 @@ resource "oci_core_subnet" "vcn_subnet" {
   dhcp_options_id = local.dhcp_default_options
   display_name    = lookup(each.value, "name", each.key)
   dns_label       = lookup(each.value, "dns_label", null)
-  freeform_tags   = {
+  freeform_tags = {
     "env" = "${var.env}"
-    "terraformed": "Please do not edit manually"
+    "terraformed" : "Please do not edit manually"
   }
   #commented for IPV6 support
   #ipv6cidr_block             = var.enable_ipv6 == false ? null : each.value.ipv6cidr_block

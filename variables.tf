@@ -1,17 +1,17 @@
 variable "tenancy_ocid" {
-  type = string
+  type        = string
   description = "tenancy_ocid"
 }
 variable "user_ocid" {
-  type = string
+  type        = string
   description = "user_ocid"
 }
 variable "fingerprint" {
-  type = string
+  type        = string
   description = "MD5 fingerprint of the private_key"
 }
 variable "private_key" {
-  type = string
+  type        = string
   description = "Private key to sign API call. Public key must be uploaded in the console."
 }
 variable "oci_region" {
@@ -51,7 +51,7 @@ variable "env" {
   }
 }
 variable "subnets" {
-  type = any
+  type        = any
   description = "Map of public and/or private subnet(s)"
 }
 variable "my_ip" {
